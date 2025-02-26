@@ -17,7 +17,7 @@ const Home = () => {
           <div className="latsetPost" style={{width:'70%'}}>
             <div className="TopPost" style={{width:"50%"}}>
                 <div className="image-post" style={{width:"100%",borderRadius:'10px',height:'300px',backgroundColor:'gray'}}>
-                    image..
+                   <img src="https://images.pexels.com/photos/169401/pexels-photo-169401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="for blog" />
                 </div>
                 <div className="details">
                     <h3 className="title" style={{fontWeight:'bold',fontSize:'30px'}}>ART ART </h3>

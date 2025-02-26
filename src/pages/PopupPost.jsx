@@ -1,8 +1,9 @@
-import React from 'react'
 
 function PopupPost() {
   return (
-    <div>PopupPost</div>
+    <div>
+      
+    </div>
   )
 }
 
