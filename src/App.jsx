@@ -1,15 +1,25 @@
+
 import { useState } from 'react'
 import Footer from './component/Footer'
-import PostListing from './component/PostListing'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Blog from './pages/Blog'
+import Navbar from './component/Navbar'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <PostListing />
+    <Router> 
+      <Navbar /> 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Blog" element={<Blog />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
+  </>
   )
 }
 
