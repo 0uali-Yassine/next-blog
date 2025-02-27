@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 
 const Blog = () => {
   return (
@@ -24,6 +22,3 @@ const Blog = () => {
 }
 
 export default Blog
-=======
-rafc
->>>>>>> master
