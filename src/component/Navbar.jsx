@@ -24,9 +24,12 @@ function Navbar() {
           <p>Posts</p>
         </NavLink>
         <div className="notification-icon">🔔</div>
-        <button className="signup-btn">
-          <NavLink style={{textDecoration:'none',color:'white'}} to='login'>Sign Up</NavLink>
+       
+          <NavLink style={{textDecoration:'none',color:'white'}} to='login'>
+          <button className="signup-btn">
+            Sign Up
         </button>
+            </NavLink>
       </div>
     </nav>
   )
