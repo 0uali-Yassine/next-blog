@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .hero-section{
     margin: 3rem 0rem 5rem 0rem;
     padding:0;
@@ -80,3 +81,360 @@
     padding: 0rem;
     margin: 0.5rem 15rem 0.5rem 15rem;
   }
+=======
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,800&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #FFFFFF;
+    font-family: 'Poppins',sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+input,
+button{
+    outline: none;
+    border: none;
+}
+
+:root {
+    --primar-color: #5D9CEC;
+}
+
+/*===== Footer =====*/
+.footer {
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .footer-brand {
+    text-align: left;
+  }
+  
+  .brand-title {
+    color: var(--primar-color);
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .link-title {
+    font-weight: bold;
+    color:  var(--primar-color);
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+/*======= Posts Listing =======*/
+
+.posts__section {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+
+}
+
+.product-card {
+  border-radius: 10px;
+  transition: box-shadow 0.7s ease-in-out, transform 0.3s;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.product-card:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.product-details {
+  padding: 15px;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.special-span {
+  color: #f07f2b;
+}
+
+.product-title {
+  color: #1F3E72;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.see{
+  color: var(--primar-color);
+  margin: 3rem 0 0;
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    
+    color: black;
+  }
+  
+  /* Logo styling */
+  .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Search bar container */
+  .search-container {
+    flex-grow: 1;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Search input styling */
+  .search-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .search-input:focus {
+    border-color: #5D9CEC;
+  }
+  
+  /* Icons container */
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Notification icon */
+  .notification-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Sign-up button styling */
+  .signup-btn {
+    padding: 8px 15px;
+    border: none;
+    background-color: #5D9CEC;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .signup-btn:hover {
+    background-color: #0056b3;
+  }
+  
+/*Home - the For you */
+
+  
+/* For the container (keeping everything on the same line) */
+.forYou {
+    display: flex;
+    padding: 17px 20px;
+    align-items: center; /* Vertically center the items */
+    gap: 15px; /* Space between the heading and list */
+  }
+  
+  /* For the heading styling */
+  .for-you-heading {
+    font-size: 19px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* List container without bullet points */
+  .forYouChoise {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Styling for each list item */
+  .forYouChoise li {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    margin-right: 20px; /* Space between each list item */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for the list items */
+  .forYouChoise li:hover {
+    color: #5D9CEC; /* Change the color on hover */
+    transform: translateX(5px); /* Slight shift effect */
+  }
+  
+
+/*latsetPost*/
+
+.latsetPost{
+    width:70%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*btn read more*/
+/* Read More button styling */
+.readMore {
+    margin-top: 5px;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #5D9CEC;
+    color: white;
+    border: 2px solid #5D9CEC;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  /* Button hover effect */
+  .readMore:hover {
+    background-color: white;
+    color: #5D9CEC;
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.4); /* Shadow effect */
+  }
+  
+  /* Button focus effect (when clicked or focused) */
+  .readMore:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #5D9CEC; /* Focus ring */
+  }
+  
+
+  /*for user Info hover*/
+.userImageName {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer; /* Shows pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Profile image styling */
+  .imageUsr {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: gray;
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+  }
+  
+  /* Info details container styling */
+  .infodetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Name text styling */
+  .nameuser {
+    font-size: 14px;
+    margin: 0;
+    transition: color 0.3s ease; /* Change text color on hover */
+  }
+  
+  /* Info text styling */
+  .info {
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    margin: 0;
+    transition: color 0.3s ease; /* Change text color on hover */
+  }
+  
+  /* Hover effect for the entire container */
+  .userImageName:hover .imageUsr {
+    transform: scale(1.1); /* Enlarges the profile image */
+  }
+  .allInfo:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+    border-radius: 8px; /* Optional: Add a slight border radius for the background */
+  }
+  
+  /* Hover effect for name and info text */
+  .userImageName:hover .nameuser,
+  .userImageName:hover .info {
+    color: #007BFF; /* Change text color to blue */
+  }
+
+  /*ad post style*/
+
+.addPost:hover{
+    cursor: pointer;
+    color:#007BFF;
+  }
+  .icons:hover div {
+    color: #5D9CEC; /* Change the color of child divs on hover */
+    cur
+>>>>>>> master

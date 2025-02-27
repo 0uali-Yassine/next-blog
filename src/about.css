@@ -1,0 +1,55 @@
+.about-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.6;
+  }
+  
+  .about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .about-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .about-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .about-section h2 {
+    color: #444;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  
+  .topics-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .contact-section {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+  
+  .about-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    color: #666;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
