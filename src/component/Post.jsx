@@ -1,16 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-const Post = ({ image, descp, price, title }) => {
+// eslint-disable-next-line react/prop-types
+const Post = ({ image, descp, title }) => {
   return (
     <div className="product-card">
-      <div className="product-image">
+      <div className="product-image" style={{position:'relative'}}>
         <img src={image} alt={descp} />
+          
       </div>
       <div className="product-details">
-        <h4 className="product-title">{title}</h4>
+          <h4 className="product-title" style={{fontSize:'19px'}}>{title}</h4>
         <p>{descp}</p>
-        <span className='see'>Link More</span>
+        <NavLink to='/' className='see'>Link More</NavLink>
       </div>
     </div>
   )
