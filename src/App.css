@@ -1,3 +1,222 @@
+.hero-section{
+    margin: 3rem 0rem 5rem 0rem;
+    padding:0;
+}
+  .image-container {
+    position: relative;
+    width: 75%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+  }
+  
+  .overlay {
+    position: absolute;
+    width: 50rem;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    text-align: center;
+    border: 1px solid #d8d5d5;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  .overlay h1 {
+    font-family: 'ROBOTO', sans-serif;
+    font-size: 2.5rem;
+    margin: 0.5rem 0rem;
+  }
+  .overlay p {
+    font-family: 'ROBOTO', sans-serif;
+    font-size: 1.1rem;
+    margin: 0.5rem 0rem 1rem 0rem;
+  }
+  .overlay h6{
+    font-family: 'ROBOTO', sans-serif;
+    font-size: 1.5rem;
+    padding: 0rem;
+    margin: 0rem;
+    
+  }
+  .overlay button {
+    background-color: #3d68a1;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .overlay button:hover {
+    background-color: #000000;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .ph{
+    font-family: 'ROBOTO', sans-serif;
+    font-size: 1.5rem;
+    padding: 0rem;
+    margin: 9rem 15rem 0.5rem 15rem;
+  }
+  .pc{
+    font-family: 'ROBOTO', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0rem;
+    margin: 0.5rem 15rem 0.5rem 15rem;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,800&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #FFFFFF;
+    font-family: 'Poppins',sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+input,
+button{
+    outline: none;
+    border: none;
+}
+
+:root {
+    --primar-color: #5D9CEC;
+}
+
+/*===== Footer =====*/
+.footer {
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .footer-brand {
+    text-align: left;
+  }
+  
+  .brand-title {
+    color: var(--primar-color);
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .link-title {
+    font-weight: bold;
+    color:  var(--primar-color);
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+/*======= Posts Listing =======*/
+
+.posts__section {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+
+}
+
+.product-card {
+  border-radius: 10px;
+  transition: box-shadow 0.7s ease-in-out, transform 0.3s;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.product-card:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.product-details {
+  padding: 15px;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.special-span {
+  color: #f07f2b;
+}
+
+.product-title {
+  color: #1F3E72;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.see{
+  color: var(--primar-color);
+  margin: 3rem 0 0;
+}
+
 /* Navbar container */
 .navbar {
     display: flex;
@@ -235,5 +454,3 @@
   text-shadow: #FFCF50 1px 0 10px; 
   
 }
-
-  

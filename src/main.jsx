@@ -6,6 +6,7 @@ import App from './App.jsx'
 import 'boxicons'
 import Context from './Context';
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Context>
