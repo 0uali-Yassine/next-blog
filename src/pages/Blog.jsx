@@ -7,7 +7,7 @@ const Blog = () => {
     <div className="hero-container">
       <img src={showBlog.image} alt="Hero Image" />
       <div className="overlay">
-        <h6>Animales | 26-02-2025</h6>
+        <h6>Blog | 26-02-2025</h6>
         <h1>{showBlog.title}</h1>
         <p>{showBlog.descp}</p>
         <button>read more</button>
