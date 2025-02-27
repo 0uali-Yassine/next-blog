@@ -1,5 +1,8 @@
+import { NavLink } from "react-router-dom";
+import { useGlobalContext } from "../Context";
 
 function Navbar() {
+  const {setAddPost} = useGlobalContext();
   return (
     <nav className="navbar">
       <div className="logo">
@@ -9,14 +12,20 @@ function Navbar() {
         <input type="text" className="search-input" placeholder="Search..." />
       </div>
       <div className="icons">
-        <div>Home </div>
-        <div>About </div>
-        <div className="addPost" style={{display:'flex',gap:'6px',justifyContent:'space-between',alignItems:'center'}}>
+        <div>
+          <NavLink to='/' className="home">Home</NavLink>
+        </div>
+        <div>
+        <NavLink to='/about' className="about" style={{padding:"5px 10px"}}>About</NavLink>
+        </div>
+        <NavLink className="addPost" style={{display:'flex',gap:'6px',justifyContent:'space-between',alignItems:'center'}}>
           <box-icon name='message-square-add' color='#007BFF' size="20px"></box-icon>
           <p>Posts</p>
-        </div>
+        </NavLink>
         <div className="notification-icon">🔔</div>
-        <button className="signup-btn">Sign Up</button>
+        <button className="signup-btn">
+          <NavLink to='login'>Sign Up</NavLink>
+        </button>
       </div>
     </nav>
   )

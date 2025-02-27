@@ -17,10 +17,10 @@ function UserInfo() {
       </div>
       <div style={{display:'flex',gap:'10px',padding:'10px 8px'}}>
         <div className="starts">
-        <box-icon type='solid' name='star' size="20px" color="#5D9CEC"></box-icon>
-        <box-icon type='solid' name='star'  size="20px" color="#5D9CEC"></box-icon>
-        <box-icon type='solid' name='star'  size="20px" color="#5D9CEC"></box-icon>
-        <box-icon type='solid' name='star' size="20px"  color="#5D9CEC"></box-icon>
+        <box-icon type='solid' name='star' size="20px" color="#FFCF50"></box-icon>
+        <box-icon type='solid' name='star'  size="20px" color="#FFCF50"></box-icon>
+        <box-icon type='solid' name='star'  size="20px" color="#FFCF50"></box-icon>
+        <box-icon type='solid' name='star' size="20px"  color="#FFCF50"></box-icon>
         </div>
         <p className="date" style={{fontSize:'12px',color:'gray'}}>15/18/09</p>
       </div>
