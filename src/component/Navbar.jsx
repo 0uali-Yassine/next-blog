@@ -1,3 +1,4 @@
+
 import { NavLink, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../Context";
 import SearchBar from "./SearchBar";

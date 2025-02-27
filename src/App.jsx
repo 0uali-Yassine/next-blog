@@ -10,13 +10,34 @@ import Login from './component/Login'
 import PopupPost from './pages/PopupPost'
 import { useGlobalContext } from './Context'
 
-
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 function App() {
   const {addPosts} = useGlobalContext();
+
+  // Search Blogs
+  const onSearchBlog = async (query) => {
+    // try {
+    //   const response = await axiosInstance.get('/blogs/searchBlogs', {
+    //     params: { query, user },
+    //   });
+    //     setBlogs(response.data.blogs);
+    //     setIsSearch(true);
+    // }catch (error) {
+    //   console.log(error);
+    // }
+  }  
+
+  // Clear Search Blogs
+  const handleClearSearch = () => {
+    setIsSearch(false);
+    getAllBlogs();
+  }
+
   return (
     <>
     <Router> 
-      <Navbar/> 
+      <Navbar onSearchBlog={onSearchBlog} handleClearSearch={handleClearSearch}/> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About/>} />
