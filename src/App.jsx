@@ -9,6 +9,7 @@ import Navbar from './component/Navbar'
 import Login from './component/Login'
 import PopupPost from './pages/PopupPost'
 import { useGlobalContext } from './Context'
+import SignUp from './component/Signup'
 
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
@@ -39,10 +40,11 @@ function App() {
     <Router> 
       <Navbar onSearchBlog={onSearchBlog} handleClearSearch={handleClearSearch}/> 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/about" element={<About/>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/Blog" element={<Blog />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       {addPosts && <PopupPost/>}
       <Footer />

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 // eslint-disable-next-line react/prop-types
-const Post = ({ image, content, title }) => {
+const Post = ({ image, descp, title }) => {
   return (
     <div className="product-card">
       <div className="product-image" style={{position:'relative'}}>
@@ -10,7 +10,7 @@ const Post = ({ image, content, title }) => {
       </div>
       <div className="product-details">
           <h4 className="product-title" style={{fontSize:'19px'}}>{title}</h4>
-        <p>{content}</p>
+        <p>{descp}</p>
         <NavLink to='/' className='see'>Link More</NavLink>
         
       </div>

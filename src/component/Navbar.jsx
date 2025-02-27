@@ -23,11 +23,12 @@ function Navbar({onSearchBlog, handleClearSearch}) {
       handleClearSearch();
   }
 
-  const navigate = useNavigate("/");
+  const navigate = useNavigate();
   
   const onLogout = () => {
-      localStorage.clear();
-      navigate("/");
+    console.log("logout")
+    navigate("/");
+    localStorage.clear();
   }
   return (
     <nav className="navbar" style={{backgroundColor:'#F7F7F7'}}>
@@ -45,7 +46,7 @@ function Navbar({onSearchBlog, handleClearSearch}) {
 
       <div className="icons">
         <div>
-          <NavLink to='/' className="home">Home</NavLink>
+          <NavLink to='/home' className="home">Home</NavLink>
         </div>
         <div>
         <NavLink to='/about' className="about" style={{padding:"5px 10px"}}>About</NavLink>
@@ -54,15 +55,19 @@ function Navbar({onSearchBlog, handleClearSearch}) {
           <box-icon name='message-square-add' color='#007BFF' size="20px"></box-icon>
           <p>Posts</p>
         </NavLink>
-        <div className="notification-icon">🔔</div>
-       
-          <NavLink style={{textDecoration:'none',color:'white'}} to='login'>
-        
-        <ProfileInfo onLogout={onLogout}/>
+        <div className="notification-icon">🔔</div> 
+
+        {
+          localStorage.getItem('token') ? (<ProfileInfo onLogout={onLogout}/>) : 
+          (
+          <NavLink style={{textDecoration:'none',color:'#007bff'}} to='/'>
+            <p style={{marginRight:'10px',fontSize:'16px',fontWeight:'bold'}}>Login</p>
+          </NavLink>  
+          )
+        }       
         {/* <button className="signup-btn">
             Sign Up
         </button> */}
-            </NavLink>
       </div>
     </nav>
   )

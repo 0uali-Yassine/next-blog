@@ -1,42 +1,73 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import PasswordInput from "../component/PasswordInput";
+import { validateEmail } from "../utils/helper";
+import axiosInstance from "../utils/axiosInstance";
 
 const Login = () => {
-    const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
+    
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+    if (!password) {
+      setError("Please enter a password");
+      return;
+    }
+    setError("");
+
+    try {
+      const response = await axiosInstance.post("/auth/login", {
+        email,
+        password,
+      });
+      if (response.data && response.data.accessToken) {
+        localStorage.setItem("token", response.data.accessToken);
+        localStorage.setItem("fullName", response.data.fullName);
+        localStorage.setItem("email", response.data.email);
+        localStorage.setItem("userId", response.data.userId);
+        navigate("/home");
+      }
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.message) {
+        setError(error.response.data.message);
+      } else {
+        setError("An unexpected error occurred. Please try again");
+      }
+    }
   };
 
- 
-    return (
-        <div className="login-container">
-        <div className="login-box">
-          <h2 className="login-title">Login</h2>
-          <form onSubmit={handleSubmit} className="login-form">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="login-input"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="login-input"
-            />
-            <button type="submit" className="login-button">
-              Login
-            </button>
-          </form>
-         
-        </div>
+  return (
+    <section className="section">
+      <div className="login-container">
+        <h1 className="text-primary">Access your thoughts</h1>
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            type="email"
+            className="input-box"
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <PasswordInput value={password} onChange={(e) => setPassword(e.target.value)} />
+          {error && <p className="error-message">{error}</p>}
+          <button className="btn-primary" type="submit">
+            Login
+          </button>
+        </form>
+        <p>
+          Do not have an account? <Link to="/signup" className="text-primary">Sign Up</Link>
+        </p>
       </div>
-    )
-  }
-  
-  export default Login;
+    </section>
+  );
+};
+
+export default Login;

@@ -2,12 +2,10 @@ import UserInfo from "../component/UserInfo";
 import PostListing from "../component/PostListing";
 import { useEffect } from "react";
 import { useGlobalContext } from "../Context";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
-  const {newPost,Post,setPost} = useGlobalContext();
-
- 
-
+  const {newPost,Post,setPost,setShowBlog} = useGlobalContext();
 
   const updatePosts = (newPost) => {
     // If newPost is empty or undefined just chiking! 
@@ -18,9 +16,6 @@ const Home = () => {
       return [newPost, ...prevPosts];  
     });
   };
-  
-
-
 
   useEffect(() => {
     updatePosts(newPost);
@@ -50,7 +45,9 @@ const Home = () => {
                     <h5 className="details">
                        {Post[0]?.descp}
                     </h5>
-                    <button className="readMore">Read More</button>
+                    <button className="readMore" onClick={setShowBlog(Post[0])}>
+                      <NavLink to='/blog' style={{textDecoration:'none',color:'black'}}>Read More</NavLink>
+                      </button>
                 </div>
             </div>
             <div className="TopTwoPost" style={{width:"40%"}}>
@@ -62,7 +59,9 @@ const Home = () => {
                     <h5 className="details">
                        {Post[1]?.descp}
                     </h5>
-                    <button className="readMore">Read More</button>
+                    <button className="readMore" onClick={setShowBlog(Post[1])}>
+                      <NavLink to='/blog' style={{textDecoration:'none',color:'black'}}>Read More</NavLink>
+                      </button>
                 </div>
             </div>
 

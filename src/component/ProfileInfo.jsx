@@ -9,6 +9,7 @@ const ProfileInfo = ({onLogout}) => {
     fullName: localStorage.getItem("fullName"),
     email: localStorage.getItem("email"),
   })
+  
 
 
   return (

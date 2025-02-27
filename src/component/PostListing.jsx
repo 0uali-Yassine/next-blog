@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Post from './Post'
 import moment from 'moment';
 
+import img from '../assets/download.jpg'
 import axiosInstance  from "../utils/axiosInstance";
 
 const PostListing = () => {
@@ -20,20 +21,20 @@ const PostListing = () => {
     }
   };
 
-  // Delete Blog
-  const deleteBlog = async (data) => {
-    const blogId = data._id;
-    try {
-      const response = await axiosInstance.delete(`/blogs/deleteBlog/${blogId}`, {
-        data: { user }
-    } )
-        getAllBlogs();
-    } catch (error) {
-      if(error.response && error.response.data && error.response.data.message){
-        setError(error.response.data.message);
-      }
-    }
-  }
+  // // Delete Blog
+  // const deleteBlog = async (data) => {
+  //   const blogId = data._id;
+  //   try {
+  //     const response = await axiosInstance.delete(`/blogs/deleteBlog/${blogId}`, {
+  //       data: { user }
+  //   } )
+  //       getAllBlogs();
+  //   } catch (error) {
+  //     if(error.response && error.response.data && error.response.data.message){
+  //       setError(error.response.data.message);
+  //     }
+  //   }
+  // }
 
   // Search Blogs
   const onSearchBlog = async (query) => {
@@ -61,9 +62,19 @@ const PostListing = () => {
 
   return (
     <section>
-      {blogs.length === 0 ? (
+      <section className='posts__section'>
+        <Post image={img} title={"What is Lorem Ipsum?"} descp={"Lorem Ipsum is simply dummy text of the printing and typesetting industry."} />
+        <Post image={img} title={"What is Lorem Ipsum?"} descp={"Lorem Ipsum is simply dummy text of the printing and typesetting industry."} />
+        <Post image={img} title={"What is Lorem Ipsum?"} descp={"Lorem Ipsum is simply dummy text of the printing and typesetting industry."} />
+        <Post image={img} title={"What is Lorem Ipsum?"} descp={"Lorem Ipsum is simply dummy text of the printing and typesetting industry."} />
+        <Post image={img} title={"What is Lorem Ipsum?"} descp={"Lorem Ipsum is simply dummy text of the printing and typesetting industry."} />
+        <Post image={img} title={"What is Lorem Ipsum?"} descp={"Lorem Ipsum is simply dummy text of the printing and typesetting industry."} />
+        <Post image={img} title={"What is Lorem Ipsum?"} descp={"Lorem Ipsum is simply dummy text of the printing and typesetting industry."} />
+    </section>
+      {/* {blogs.length === 0 ? (
+
         <p className="text-center text-xl">
-          No notes found. Add some notes by clicking on the plus icon.
+          No blogs found. Add some blogs by clicking on the plus icon.
         </p>
       ) : (
         <div className="posts__section">
@@ -73,11 +84,11 @@ const PostListing = () => {
               title={blog.title}
               date={moment(blog.createdOn).format("DD MM YYYY")}
               content={blog.content}
-              onDelete={() => deleteBlog(blog)}
+              // onDelete={() => deleteBlog(blog)}
             />
           ))}
         </div>
-      )}
+      )} */}
     </section>
   )
 }

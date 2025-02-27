@@ -1,13 +1,15 @@
+import { useGlobalContext } from "../Context"
 
 const Blog = () => {
+  const {showBlog} = useGlobalContext();
   return (
     <div className='hero-section'>
     <div className="hero-container">
-      <img src="http://localhost:5173/COVER.jpg" alt="Hero Image" />
+      <img src={showBlog.image} alt="Hero Image" />
       <div className="overlay">
         <h6>Animales | 26-02-2025</h6>
-        <h1>The Leading Voice in Unlocking Potential</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem quaerat ex illo sit voluptate blanditiis iure quidem a quia minus, numquam itaque inventore reiciendis dolores libero quo dignissimos tempore sed!</p>
+        <h1>{showBlog.title}</h1>
+        <p>{showBlog.descp}</p>
         <button>read more</button>
       </div>
     </div> 
