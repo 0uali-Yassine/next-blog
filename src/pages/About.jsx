@@ -1,4 +1,3 @@
-import './About.css';
 
 const About = () => {
   return (
@@ -11,8 +10,8 @@ const About = () => {
         <section className="about-section">
           <h2>Who We Are</h2>
           <p>
-            Welcome to [Your Blog Name], a space dedicated to [your blogs main topic or niche]. 
-            Were passionate about sharing [type of content] that inspires, educates, and connects 
+            Welcome to Next Blogg, a space dedicated to Art .... 
+            Were passionate about sharing General informations that inspires, educates, and connects 
             with our readers. Our team of writers and enthusiasts come together to bring you 
             fresh perspectives and valuable insights.
           </p>

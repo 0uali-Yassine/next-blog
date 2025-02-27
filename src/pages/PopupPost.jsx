@@ -1,23 +1,32 @@
 
 
-import { useState } from "react";
+import { useGlobalContext } from "../Context";
 
 const PopupPost = () => {
-  const [title, setTitle] = useState("");
-  const [heading, setHeading] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState(null);
+  const {
+    setAddPosts,setTitle,setHeading,setDescp,setImage
+    ,title,descp,image,heading,setNewPost,setPost,newPost
+  } = useGlobalContext();
+ 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setImage(URL.createObjectURL(file));
   };
 
+  const addNewPost = () => {
+    setAddPosts(prev => !prev);
+
+    setNewPost({id: Math.random(), title, heading, descp, image });
+
+    setPost(prev => ([...prev, newPost]));
+  };
+
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button className="close-btn" >
-        {/*<FaTimes />*/}
+        <button onClick={()=> setAddPosts(prev=>!prev)} className="close-btn" >
+          <box-icon name='x' size="40px" color="red"></box-icon>
         </button>
 
         <h2>Add Your Content</h2>
@@ -38,15 +47,15 @@ const PopupPost = () => {
 
         <textarea
           placeholder="Enter description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={descp}
+          onChange={(e) => setDescp(e.target.value)}
         ></textarea>
 
         <input type="file" accept="image/*" onChange={handleImageChange} />
 
         {image && <img src={image} alt="Preview" className="image-preview" />}
 
-        <button className="submit-btn">Submit</button>
+        <button onClick={()=> addNewPost()} className="submit-btn">Add Post</button>
       </div>
     </div>
   );

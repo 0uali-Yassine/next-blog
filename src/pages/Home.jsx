@@ -1,6 +1,31 @@
 import UserInfo from "../component/UserInfo";
+import PostListing from "../component/PostListing";
+import { useEffect } from "react";
+import { useGlobalContext } from "../Context";
 
 const Home = () => {
+  const {newPost,Post,setPost} = useGlobalContext();
+
+ 
+
+
+  const updatePosts = (newPost) => {
+    // If newPost is empty or undefined just chiking! 
+    if (!newPost || Object.keys(newPost).length === 0) return;  
+  
+    setPost((prevPosts) => {
+      // Add the new post at the beginning of the array while keeping the old ones  
+      return [newPost, ...prevPosts];  
+    });
+  };
+  
+
+
+
+  useEffect(() => {
+    updatePosts(newPost);
+  }, [newPost]);
+
   return (
     <div style={{marginTop:'30px'}}>
         <div className="forYou">
@@ -17,25 +42,25 @@ const Home = () => {
           <div className="latsetPost" style={{width:'70%'}}>
             <div className="TopPost" style={{width:"50%"}}>
                 <div className="image-post" style={{width:"100%",borderRadius:'10px',overflow:"hidden",height:'300px',backgroundColor:'gray'}}>
-                   <img src="https://images.pexels.com/photos/169401/pexels-photo-169401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="for blog" />
+                   <img src={Post[0]?.image} alt="for blog" style={{width:"100%",height:'100%'}} />
                 </div>
                 
                 <div className="details" style={{margin:'10px 10px'}}>
-                    <h3 className="title" style={{fontWeight:'bold',fontSize:'30px'}}>ART ART </h3>
+                    <h3 className="title" style={{fontWeight:'bold',fontSize:'30px'}}>{Post[0]?.title}</h3>
                     <h5 className="details">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quia molestiae quidem magni quo consectetur adipisicing elit. Illo quia molestiae quidem magni quo fugiat ex optio similique enim. Labore odit placeat alias? Est neque eum sint ad ut facilis?
+                       {Post[0]?.descp}
                     </h5>
                     <button className="readMore">Read More</button>
                 </div>
             </div>
             <div className="TopTwoPost" style={{width:"40%"}}>
                <div className="image-post" style={{width:"100%",overflow:"hidden",borderRadius:'10px',height:'200px',backgroundColor:'gray'}}>
-                    <img src="https://images.pexels.com/photos/7767634/pexels-photo-7767634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="img blog" />
+                    <img src={Post[1]?.image} alt="img blog" style={{width:"100%",height:'100%'}} />
                 </div>
                 <div className="details">
-                    <h3 className="title" style={{fontWeight:'bold',fontSize:'20px'}}>ART ART </h3>
+                    <h3 className="title" style={{fontWeight:'bold',fontSize:'20px'}}>{Post[1]?.title}</h3>
                     <h5 className="details">
-                        Lorem ipsum, dolor sit amet consectetur acilis? amet consectetur acilis?
+                       {Post[1]?.descp}
                     </h5>
                     <button className="readMore">Read More</button>
                 </div>
@@ -43,7 +68,7 @@ const Home = () => {
 
           </div>
 
-          <div className="" style={{width:'30%',padding:'20px',gap:'10px',display:'flex',flexDirection:'column'}}>
+          <div className="" style={{width:'30%',padding:'20px',borderRadius:'10px',gap:'10px',display:'flex',flexDirection:'column',backgroundColor:"#F7F7F7"}}>
             <h4 style={{fontWeight:'bold',fontSize:"24px"}}>Staff Pick</h4>
             <UserInfo/>
             <hr style={{width:'60%',margin:'auto',color:'#5D9CEC'}}/>
@@ -56,9 +81,7 @@ const Home = () => {
 
         </div>
 
-        <div className="relatedPost">
-
-        </div>
+        <PostListing />
     </div>
   )
 }

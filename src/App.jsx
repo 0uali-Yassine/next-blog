@@ -1,5 +1,4 @@
 
-import { useState } from 'react'
 import Footer from './component/Footer'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -13,7 +12,7 @@ import { useGlobalContext } from './Context'
 
 
 function App() {
-  const {addPost} = useGlobalContext();
+  const {addPosts} = useGlobalContext();
   return (
     <>
     <Router> 
@@ -24,7 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Blog" element={<Blog />} />
       </Routes>
-      {addPost && <PopupPost/>}
+      {addPosts && <PopupPost/>}
       <Footer />
     </Router>
   </>
