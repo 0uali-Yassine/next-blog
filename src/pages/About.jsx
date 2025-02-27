@@ -20,8 +20,8 @@ const About = () => {
         <section className="about-section">
           <h2>Our Mission</h2>
           <p>
-            Our mission is to [describe your mission]. We believe in [core values or principles] 
-            and strive to create content that [what you hope to achieve for readers]. Whether youre 
+            Our mission is to give people the latest informations about everything related to art and mental health. We believe in equality 
+            and strive to create content that give the users all the informations they starve. Whether youre 
             here to learn, be inspired, or simply enjoy good writing, we aim to make every visit 
             worthwhile.
           </p>
@@ -30,10 +30,10 @@ const About = () => {
         <section className="about-section">
           <h2>What We Write About</h2>
           <ul className="topics-list">
-            <li>Topic 1</li>
-            <li>Topic 2</li>
-            <li>Topic 3</li>
-            <li>Topic 4</li>
+            <li>Art</li>
+            <li>Psychologie</li>
+            <li>Fashion</li>
+            <li>waayli baghi t9ra ta hadi baraka ghire 3 :)</li>
           </ul>
         </section>
 
@@ -48,7 +48,7 @@ const About = () => {
       </main>
 
       <footer className="about-footer">
-        <p>© {new Date().getFullYear()} [Your Blog Name]. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Next blog. All rights reserved.</p>
       </footer>
     </div>
   );
