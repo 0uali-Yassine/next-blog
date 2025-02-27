@@ -631,9 +631,63 @@ a:hover {
   margin-top: 10px;
 }
 
-
-
 .divider {
   margin: 20px 0;
   border: 0.5px solid #ccc;
+}
+
+/*==== Profile Info ====*/
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-initials {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 500;
+  background-color: #f1f5f9; /* Equivalent to bg-slate-100 */
+  color: #0f172a; /* Equivalent to text-slate-950 */
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logout-btn {
+  font-size: 14px;
+  color: #475569; /* Equivalent to text-slate-700 */
+  text-decoration: underline;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/*==== SearchBar ====*/
+.search-container {
+  width: 320px; /* Equivalent to w-80 */
+  display: flex;
+  align-items: center;
+  padding: 0 16px; /* Equivalent to px-4 */
+  background-color: #f1f5f9; /* Equivalent to bg-slate-100 */
+  border-radius: 8px; /* Equivalent to rounded-md */
+}
+
+.search-input {
+  width: 100%;
+  font-size: 12px; /* Equivalent to text-xs */
+  background: transparent;
+  padding: 11px 0; /* Equivalent to py-[11px] */
+  border: none;
+  outline: none;
+}
+
+.search-container box-icon {
+  cursor: pointer;
 }

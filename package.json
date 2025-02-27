@@ -9,11 +9,12 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploay":"npm run build",
-    "deploy":"gh-pages -d dist"
+    "predeploay": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
+    "axios": "^1.8.1",
     "boxicons": "^2.1.4",
     "gh-pages": "^6.3.0",
     "react": "^19.0.0",

@@ -1,17 +1,47 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../Context";
+import SearchBar from "./SearchBar";
+import ProfileInfo from "./ProfileInfo";
+import { useState } from "react";
 
-function Navbar() {
+
+function Navbar({onSearchBlog, handleClearSearch}) {
   const {setAddPosts} = useGlobalContext();
+  
+  const [searchQuery, setSearchQuery] = useState("");
+    
+  const handleSearch = () => {
+      if (searchQuery) {
+          onSearchBlog(searchQuery);
+          setSearchQuery("");
+      }
+  }
 
+  const onClearSearch = () => {
+      setSearchQuery("");
+      handleClearSearch();
+  }
+
+  const navigate = useNavigate("/");
+  
+  const onLogout = () => {
+      localStorage.clear();
+      navigate("/");
+  }
   return (
     <nav className="navbar" style={{backgroundColor:'#F7F7F7'}}>
       <div className="logo">
         <NavLink to='/' style={{textDecoration:'none'}}><h1>Next Blog</h1></NavLink>
       </div>
-      <div className="search-container">
-        <input type="text" className="search-input" placeholder="Search..." />
-      </div>
+      <SearchBar 
+            value={searchQuery}
+            onChange={({ target }) => {
+                setSearchQuery(target.value);
+            }}
+            handleSearch={handleSearch}
+            onClearSearch={onClearSearch}
+        />
+
       <div className="icons">
         <div>
           <NavLink to='/' className="home">Home</NavLink>
@@ -26,9 +56,11 @@ function Navbar() {
         <div className="notification-icon">🔔</div>
        
           <NavLink style={{textDecoration:'none',color:'white'}} to='login'>
-          <button className="signup-btn">
+        
+        <ProfileInfo onLogout={onLogout}/>
+        {/* <button className="signup-btn">
             Sign Up
-        </button>
+        </button> */}
             </NavLink>
       </div>
     </nav>
